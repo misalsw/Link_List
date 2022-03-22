@@ -10,6 +10,22 @@ public class SingleLinkedList {
         head = node;
     }
 
+    public void insertAt(int index, int data) {
+        Node node = new Node();
+        node.data = data;
+
+        if (index == 0) {
+            insertFirst(data);
+        } else {
+            Node n = head;
+            for (int i = 0; i < index - 1; i++) {
+                n = n.next;
+            }
+            node.next = n.next;
+            n.next = node;
+        }
+    }
+
     public void insertLast(int data) {
         Node node = new Node();
         node.data = data;
@@ -21,10 +37,9 @@ public class SingleLinkedList {
             while (n.next != null) {
                 n = n.next;
             }
+            n.next = node;
         }
     }
-
-
 
     public void printNodeElement() {
         Node node = head;
@@ -35,5 +50,6 @@ public class SingleLinkedList {
             node.display();
             node = node.next;
         }
+
     }
 }
