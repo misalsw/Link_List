@@ -4,75 +4,69 @@ public class SingleLinkedList {
     Node head;
 
     public void insertFirst(int data) {
-        Node node = new Node();
+        Node node = new Node(data);
         node.setData(data);
         node.setNext(head);
         head = node;
     }
 
-    public void insertAt(int index, int data) {
-        Node node = new Node();
-        node.data = data;
-
-        if (index == 0) {
-            insertFirst(data);
-        } else {
-            Node n = head;
-            for (int i = 0; i < index - 1; i++) {
-                n = n.next;
-            }
-            node.next = n.next;
-            n.next = node;
-        }
-    }
-
     public void insertLast(int data) {
-        Node node = new Node();
-        node.data = data;
+        Node currentNode = head;
 
-        if (head == null) {
-            head = node;
-        } else {
-            Node n = head;
-            while (n.next != null) {
-                n = n.next;
-            }
-            n.next = node;
+        while(currentNode.next != null) {
+            currentNode = currentNode.next;
         }
+        Node node = new Node(data);
+        node.setData(data);
+        currentNode.setNext(node);
     }
-    public void deleteAt(int index) {
-        Node n = head;
-        Node n1 = null;
-        for(int i = 0; i < index -1 ; i++)
-        {
-            n = n.next;
+
+    public void insertInBetween(int before,int data) {
+        Node currentNode = head;
+
+        while(currentNode.data != before) {
+            currentNode = currentNode.next;
         }
-        n1 = n.next;
-        n.next = n1.next;
+        Node node = new Node(data);
+        node.next = currentNode.next;
+        currentNode.next = node;
+    }
+
+    public Node deleteFirst() {
+        Node currentNode = head;
+        head = head.next;
+        return currentNode;
+    }
+
+    public void deleteLast() {
+        Node currentNode = head;
+        Node secondLast = null;
+        while(currentNode.next != null) {
+            secondLast = currentNode;
+            currentNode = currentNode.next;
+        }
+        secondLast.next = null;
     }
 
     public Node findNode(int data) {
-        Node node = head;
+        Node currentNode = head;
 
-        while (node.next != null) {
-            if (node.data == data) {
-                System.out.println("Element Found " + data);
-                return node;
+        while(currentNode.next != null) {
+            if(currentNode.data == data) {
+                System.out.println("Element Found "+data);
+                return currentNode;
             }
-            node = node.next;
+            currentNode = currentNode.next;
         }
         return null;
     }
 
     public void printNodeElement() {
-        Node node = head;
-
-        System.out.println(" Linked List Element ");
-
-        while (node != null) {
-            node.display();
-            node = node.next;
+        Node currentNode = head;
+        System.out.println("------Linked List Element------");
+        while(currentNode != null) {
+            currentNode.display();
+            currentNode = currentNode.next;
         }
-
     }
 }
