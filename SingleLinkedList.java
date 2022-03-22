@@ -10,12 +10,28 @@ public class SingleLinkedList {
         head = node;
     }
 
+    public void insertLast(int data) {
+        Node node = new Node();
+        node.data = data;
+
+        if (head == null) {
+            head = node;
+        } else {
+            Node n = head;
+            while (n.next != null) {
+                n = n.next;
+            }
+        }
+    }
+
+
+
     public void printNodeElement() {
         Node node = head;
 
         System.out.println(" Linked List Element ");
 
-        while (node.next != null) {
+        while (node != null) {
             node.display();
             node = node.next;
         }
