@@ -10,7 +10,6 @@ public class LinkedList {
         singleLinkedList.deleteAt(0);
 
 
-
         singleLinkedList.printNodeElement();
     }
 

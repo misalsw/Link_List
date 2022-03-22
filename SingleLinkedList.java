@@ -40,7 +40,7 @@ public class SingleLinkedList {
             n.next = node;
         }
     }
-
+  
     public void deleteAt(int index) {
 
         if(index == 0)
@@ -58,6 +58,7 @@ public class SingleLinkedList {
             n.next = n1.next;
         }
     }
+
 
     public void printNodeElement() {
         Node node = head;
