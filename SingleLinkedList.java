@@ -61,6 +61,27 @@ public class SingleLinkedList {
         return null;
     }
 
+    public void sort() {
+        Node currentNode = head , index = null;
+        if(head == null) {
+            System.out.println("List Is Empty");
+            return;
+        }
+
+        while(currentNode != null) {
+            index = currentNode.getNext();
+            while(index != null) {
+                if(currentNode.getData() > index.getData()) {
+                    int temp = currentNode.getData();
+                    currentNode.setData(index.getData());
+                    index.setData(temp);
+                }
+                index = index.getNext();
+            }
+            currentNode = currentNode.getNext();
+        }
+    }
+
     public void printNodeElement() {
         Node currentNode = head;
         System.out.println("------Linked List Element------");
