@@ -4,7 +4,7 @@ public class Node {
     int data;
     Node next;
 
-    public Node(int data) {
+    public Node() {
         super();
         this.data = data;
     }
@@ -23,5 +23,9 @@ public class Node {
 
     public void setNext(Node next) {
         this.next = next;
+    }
+
+    public void display() {
+        System.out.println(" "+data);
     }
 }
