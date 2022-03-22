@@ -4,9 +4,9 @@ public class LinkedList {
     public static void main(String[] args) {
         SingleLinkedList singleLinkedList = new SingleLinkedList();
 
-        singleLinkedList.insertFirst(70);
-        singleLinkedList.insertFirst(30);
         singleLinkedList.insertFirst(56);
+        singleLinkedList.insertAt (1,30);
+        singleLinkedList.insertLast(70);
 
 
         singleLinkedList.printNodeElement();
