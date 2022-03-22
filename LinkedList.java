@@ -11,6 +11,9 @@ public class LinkedList {
         singleLinkedList.findNode(30);
         singleLinkedList.insertInBetween(30, 40);
         singleLinkedList.printNodeElement();
+        singleLinkedList.deleteAnyNode(40);
+        singleLinkedList.printNodeElement();
+
     }
 
 }

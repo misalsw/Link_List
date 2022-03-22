@@ -48,6 +48,17 @@ public class SingleLinkedList {
         secondLast.next = null;
     }
 
+    public void deleteAnyNode(int data) {
+        Node currentNode = head;
+        Node previousNode = head;
+
+        while (currentNode != null) {
+            if (currentNode.data == data) {
+                previousNode.next = currentNode.next;
+            }
+        }
+    }
+
     public Node findNode(int data) {
         Node currentNode = head;
 
