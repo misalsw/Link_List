@@ -5,12 +5,11 @@ public class LinkedList {
         SingleLinkedList singleLinkedList = new SingleLinkedList();
 
         singleLinkedList.insertFirst(56);
-        singleLinkedList.insertAt (1,30);
         singleLinkedList.insertLast(70);
-
+        singleLinkedList.insertInBetween(56,30);
+        singleLinkedList.printNodeElement();
         singleLinkedList.findNode(30);
-
-
+        singleLinkedList.insertInBetween(30, 40);
         singleLinkedList.printNodeElement();
     }
 
