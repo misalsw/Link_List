@@ -7,6 +7,7 @@ public class LinkedList {
         singleLinkedList.insertFirst(56);
         singleLinkedList.insertAt (1,30);
         singleLinkedList.insertLast(70);
+        singleLinkedList.deleteAt(0);
 
 
         singleLinkedList.printNodeElement();
