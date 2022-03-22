@@ -8,6 +8,8 @@ public class LinkedList {
         singleLinkedList.insertAt (1,30);
         singleLinkedList.insertLast(70);
 
+        singleLinkedList.deleteAt(2);
+
 
         singleLinkedList.printNodeElement();
     }
