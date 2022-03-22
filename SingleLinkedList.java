@@ -51,6 +51,19 @@ public class SingleLinkedList {
         n.next = n1.next;
     }
 
+    public Node findNode(int data) {
+        Node node = head;
+
+        while (node.next != null) {
+            if (node.data == data) {
+                System.out.println("Element Found " + data);
+                return node;
+            }
+            node = node.next;
+        }
+        return null;
+    }
+
     public void printNodeElement() {
         Node node = head;
 
